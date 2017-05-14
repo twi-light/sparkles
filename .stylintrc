@@ -1,0 +1,5 @@
+{
+  "colons": "never",
+  "indentPref": 2,
+  "namingConvention": "lowercase-dash"
+}

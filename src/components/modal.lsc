@@ -1,0 +1,5 @@
+import 'styles/modal'
+import {div} from 'teact'
+
+export Modal({ open, children }: { open: boolean }) ->
+  if open: div('#Modal.overlay', children)

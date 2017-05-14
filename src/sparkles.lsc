@@ -1,0 +1,16 @@
+import { install } from 'offline-plugin/runtime'
+if (process.env.NODE_ENV === 'production') install()
+import 'isomorphic-fetch'
+import 'styles/sparkles'
+
+import {crel, div, text} from 'teact'
+import {render} from 'react-dom'
+import {Modal} from 'components/modal'
+
+document.addEventListener('DOMContentLoaded', loaded)
+loaded(): void ->
+  root = document.createElement('div')
+  document.body.appendChild(root)
+  render(crel(Modal, { show: 'true' }, ->
+    div('.test', text('Hi there, this is a modal!'))
+  ), root)

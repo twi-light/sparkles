@@ -1,0 +1,64 @@
+{
+  "name": "sparkles",
+  "version": "0.0.0",
+  "description": "Sparkles  - An expirimental chat client for f-chat.",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "jest --coverage",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twi-light/sparkles.git"
+  },
+  "keywords": [
+    "lightscript",
+    "flow",
+    "react",
+    "redux",
+    "chat",
+    "f-chat",
+    "f-list"
+  ],
+  "author": "Twilight Sparkles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twi-light/sparkles/issues"
+  },
+  "homepage": "https://github.com/twi-light/sparkles#readme",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-lightscript": "^0.5.1",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-lightscript": "^0.5.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-standalone": "^6.22.1",
+    "babili-webpack-plugin": "^0.0.11",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-flowtype": "^2.32.1",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.46.0",
+    "flowtype-loader": "^0.2.2",
+    "jest": "^20.0.1",
+    "lightscript-eslint": "^0.5.1",
+    "offline-plugin": "^4.7.0",
+    "style-loader": "^0.17.0",
+    "stylint": "^1.5.9",
+    "stylint-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "teact": "^1.3.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5",
+    "yarn": "^0.24.4"
+  }
+}
