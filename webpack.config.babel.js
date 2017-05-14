@@ -19,7 +19,7 @@ const production = !/dev/i.test(`${process.argv}`)
 export default {
   entry: { [`${Package.name}`]: `./src/${Package.name}.lsc` },
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: __dirname,
     filename: '[name].js?[hash]',
     publicPath: '/'
   },
