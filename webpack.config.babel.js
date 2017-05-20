@@ -7,7 +7,6 @@ import {
 } from 'webpack'
 import BabiliPlugin from 'babili-webpack-plugin'
 import OfflinePlugin from 'offline-plugin'
-import FlowtypePlugin from 'flowtype-loader/plugin'
 
 import eslintOptions from './.eslintrc.json'
 
@@ -17,10 +16,15 @@ const babelOptions = JSON.parse(readFileSync(resolve(__dirname, '.babelrc')))
 const production = !/dev/i.test(`${process.argv}`)
 
 export default {
-  entry: { [`${Package.name}`]: `./src/${Package.name}.lsc` },
+  entry: {
+    [`${Package.name}`]: production ? `./src/${Package.name}.lsc` : [
+      'react-hot-loader/patch',
+      `./src/${Package.name}.lsc`
+    ]
+  },
   output: {
     path: __dirname,
-    filename: '[name].js?[hash]',
+    filename: `${Package.name}.js`,
     publicPath: '/'
   },
   module: {
@@ -28,13 +32,22 @@ export default {
       test: /\.lsc$/,
       use: [{
         loader: 'babel-loader',
-        options: babelOptions
+        options: production ? babelOptions : {
+          "presets": [
+            ["env", {
+              "targets": {
+                "chrome": 55
+              }
+            }],
+            "lightscript",
+            "stage-3"
+          ],
+          "plugins": ["tcomb"]
+        }
       }, {
         loader: 'eslint-loader',
         options: eslintOptions
-      },
-      { loader: 'flowtype-loader' }
-    ]
+      }]
     }, {
       test: /\.styl/,
       loaders: [
@@ -64,7 +77,6 @@ export default {
       NODE_ENV: 'production',
       DEBUG: false
     }),
-    new FlowtypePlugin(),
     new OfflinePlugin({
       externals: [
         'index.html'
@@ -76,7 +88,6 @@ export default {
       NODE_ENV: 'development',
       DEBUG: true
     }),
-    new FlowtypePlugin(),
     new NamedModulesPlugin(),
     new HotModuleReplacementPlugin()
   ]

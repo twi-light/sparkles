@@ -1,6 +1,8 @@
 # build / dists
 build
 dist
+sparkles.js
+sw.js
 
 # Logs
 logs

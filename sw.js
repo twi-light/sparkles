@@ -1,8 +1,7 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/sparkles.js?a52a83549bb11d4e1a6b",
-      "/sparkles.js.map?a52a83549bb11d4e1a6b",
+      "/sparkles.js",
       "/"
     ],
     "additional": [],
@@ -12,12 +11,11 @@ var __wpo = {
     "/"
   ],
   "hashesMap": {
-    "a4013411f5a2adeb39943901a805cb9ea8b9c45d": "/sparkles.js?a52a83549bb11d4e1a6b",
-    "f0c2e403383d35832cddc00203be414ac5d5cf23": "/sparkles.js.map?a52a83549bb11d4e1a6b"
+    "257199615c4fd851f3ab0f605941568263cbd133": "/sparkles.js"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "5/13/2017, 11:12:27 PM",
+  "version": "5/14/2017, 1:07:17 PM",
   "name": "webpack-offline",
   "pluginVersion": "4.7.0",
   "relativePaths": false

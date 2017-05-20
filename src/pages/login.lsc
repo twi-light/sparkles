@@ -1,3 +1,4 @@
+// @flow
 import Modal from 'components/modal'
 import {crel, input, label, text} from 'teact'
 
